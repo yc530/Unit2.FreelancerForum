@@ -10,7 +10,6 @@ const freelancersArray = [
     {name:"Katie", price: 40, occupation:"makeup artist"},
     {name: "Bruno", price:60, occupation:"private chef"},
     {name:"Emmy", price:50, occupation:"writer"},
-    {name: "Yoona", price:0, occupation:"professional homie"},
 ];
 
 //This is referencing to HTML elements by their IDs
