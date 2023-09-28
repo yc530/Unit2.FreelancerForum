@@ -12,6 +12,7 @@ const freelancersArray = [
     {name:"Emmy", price:50, occupation:"writer"},
     {name: "Yoona", price:0, occupation:"professional homie"},
 ];
+
 //This is referencing to HTML elements by their IDs
 //These elements will be used to display freelancer information on the body of HTML page
 function displayFreelancers(){
@@ -44,8 +45,12 @@ function displayFreelancers(){
     //showing the calculated average hourly rate with two decimal places.
     averagePriceElement.textContent = `Average hourly rate : $${averagePrice.toFixed(2)}`;
 }
+// stops the list at 36 (because 1=0 in context of index)
+const maxFreelancers = 35;
 // creates a function with options for random picks of names, occupations 
 function generatedFreelancer() {
+    //if the array is greater than or equal to my maxFreelancers, then stop the list
+    if (freelancersArray.length<= maxFreelancers) {
     names =["Alice", "Agatha", "Ashley", "Eve", "Steve", "George", "Karma", "Plato", "Rahul", "Jimena", "Frank", "Madeline", "Elise"];
     occupations =["dancer", "painter", "chef", "dogwalker", "builder", "plumber", "electrician", "musician"];
     // picks random name from the new array of names above
@@ -64,6 +69,7 @@ function generatedFreelancer() {
     //pushes random freelancer array to merge with old established array, then displays it
     freelancersArray.push (randomFreelancer);
     displayFreelancers();
+}
 }
 //generates a new random freelancer every 3 seconds
 const addFreelancerIntervalId = setInterval(generatedFreelancer, 3000);
