@@ -69,14 +69,11 @@ function generatedFreelancer() {
     };
     //pushes random freelancer array at the end of the old established array & displays it
     freelancersArray.push (randomFreelancer);
-    // displays the new array through the function displayFreelancers, 
-    //it is not displaying the original array.
-    //It is only displaying the updated contents of displayFreelancers
+
+    //It is displaying the updated contents of displayFreelancers
     displayFreelancers();
 }
 } //<<<< THIS IS THE END OF THE LONG FUNCTION I STARTED UP TOP, AFTER THE ARRAY. 
 //generates a new random freelancer every 3 seconds
 const addFreelancerIntervalId = setInterval(generatedFreelancer, 3000);
-//Because this is not included in the function display brackets,
-// it is able to display original premade array 
-displayFreelancers();
+ 
