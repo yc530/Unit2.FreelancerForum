@@ -48,7 +48,7 @@ function displayFreelancers(){
 const maxFreelancers = 35;
 // creates a function with options for random picks of names, occupations 
 function generatedFreelancer() {
-    //if the array is greater than or equal to my maxFreelancers, then stop the list
+    //if the array is greater than or equal to my maxFreelancers (35), then stop the list
     if (freelancersArray.length<= maxFreelancers) {
     names =["Alice", "Agatha", "Ashley", "Eve", "Steve", "George", "Karma", "Plato", "Rahul", "Jimena", "Frank", "Madeline", "Elise"];
     occupations =["dancer", "actor", "painter", "chef", "dogwalker", "builder", "plumber", "electrician", "musician"];
@@ -58,20 +58,25 @@ function generatedFreelancer() {
     const randomOccupations= occupations[Math.floor(Math.random()*occupations.length)];
     //generates a random price between 50-79 (0=1, and so 80=79)
     const randomPrice = Math.floor(Math.random()*50)+30;
-    //hows how the new random generated information will be displayed and assigns 
-    //name, occupation, and price to one random name as we displayed in new array
-    const randomFreelancer = {
+    //I am telling the code, that randomFreelancer's composition is 
+    //drawn from generatedFreelancer -- name is composed of data in randomName,
+    //it's occupation is composed of data in randomOccupation, 
+    //it's price a random price we randomized in function generatedFreelancer
+        const randomFreelancer = {
         name: randomName,
         occupation: randomOccupations,
         price: randomPrice,
     };
-    //pushes random freelancer array at the end of the old established array, then displays it
+    //pushes random freelancer array at the end of the old established array & displays it
     freelancersArray.push (randomFreelancer);
-    // displays the
+    // displays the new array through the function displayFreelancers, 
+    //it is not displaying the original array.
+    //It is only displaying the updated contents of displayFreelancers
     displayFreelancers();
 }
-}
+} //<<<< THIS IS THE END OF THE LONG FUNCTION I STARTED UP TOP, AFTER THE ARRAY. 
 //generates a new random freelancer every 3 seconds
 const addFreelancerIntervalId = setInterval(generatedFreelancer, 3000);
-//displays original premade array 
+//Because this is not included in the function display brackets,
+// it is able to display original premade array 
 displayFreelancers();
