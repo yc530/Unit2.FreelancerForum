@@ -41,8 +41,8 @@ function displayFreelancers(){
     //by diving the total price by the number of freelancers
     const averagePrice=totalPrice/freelancersArray.length;
     //this updates the text content of "averagePrice" element
-    //showing the calculated average hourly rate with two decimal places.
-    averagePriceElement.textContent = `Average hourly rate : $${averagePrice.toFixed(2)}`;
+    //showing the calculated average hourly rate
+    averagePriceElement.textContent = `Average hourly rate : $${averagePrice.toFixed}`;
 }
 // stops the list at 36 (because 1=0 in context of index)
 const maxFreelancers = 35;
@@ -51,14 +51,14 @@ function generatedFreelancer() {
     //if the array is greater than or equal to my maxFreelancers, then stop the list
     if (freelancersArray.length<= maxFreelancers) {
     names =["Alice", "Agatha", "Ashley", "Eve", "Steve", "George", "Karma", "Plato", "Rahul", "Jimena", "Frank", "Madeline", "Elise"];
-    occupations =["dancer", "painter", "chef", "dogwalker", "builder", "plumber", "electrician", "musician"];
+    occupations =["dancer", "actor", "painter", "chef", "dogwalker", "builder", "plumber", "electrician", "musician"];
     // picks random name from the new array of names above
     const randomName = names[Math.floor(Math.random() * names.length)];
     //picks random occupation from new array of occupations
     const randomOccupations= occupations[Math.floor(Math.random()*occupations.length)];
-    //generates a random price between 50-79
-    const randomPrice = Math.floor(Math.random()*50) +30;
-    // shows how the new random generated information will be displayed and assigns 
+    //generates a random price between 50-79 (0=1, and so 80=79)
+    const randomPrice = Math.floor(Math.random()*50)+30;
+    //hows how the new random generated information will be displayed and assigns 
     //name, occupation, and price to one random name as we displayed in new array
     const randomFreelancer = {
         name: randomName,
@@ -67,7 +67,7 @@ function generatedFreelancer() {
     };
     //pushes random freelancer array at the end of the old established array, then displays it
     freelancersArray.push (randomFreelancer);
-    // displays 
+    // displays the
     displayFreelancers();
 }
 }
