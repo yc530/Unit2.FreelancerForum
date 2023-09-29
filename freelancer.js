@@ -65,8 +65,9 @@ function generatedFreelancer() {
         occupation: randomOccupations,
         price: randomPrice,
     };
-    //pushes random freelancer array to merge with old established array, then displays it
+    //pushes random freelancer array at the end of the old established array, then displays it
     freelancersArray.push (randomFreelancer);
+    // displays 
     displayFreelancers();
 }
 }
