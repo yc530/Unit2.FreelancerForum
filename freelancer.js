@@ -73,7 +73,7 @@ function generatedFreelancer() {
     //It is displaying the updated contents of displayFreelancers
     displayFreelancers();
 }
-} //<<<< THIS IS THE END OF THE LONG FUNCTION I STARTED UP TOP, AFTER THE ARRAY. 
+}
 //generates a new random freelancer every 3 seconds
 const addFreelancerIntervalId = setInterval(generatedFreelancer, 3000);
  
